@@ -44,21 +44,22 @@
     <?php
 
     $nums=$startDays+1;
+    echo "<tr>";   //要先有一個<tr>
         for ($i=1;$i<=$startDays;$i++){
             echo "<td></td>";
         }
         for ($i=1;$i<=$days;$i++){
             if ($nums%7==0){
                 echo "<td>$i</td>";
-                echo "<tr></tr>";   
+                echo "</tr><tr>";  //標籤的順序要和第一個<tr>對應   
             }else{
                 echo "<td>$i</td>";
             }
             $nums++;
         }
-        
-        echo "<h2><a href=date.php?y=" . ($year) . "&m=" . ($month-1) . ">上一月</a>";
-        echo "<a href=date.php?y=" . ($year) . "&m=" . ($month+1) . ">下一月</a></<a>";
+        echo "</tr></table>";   //表格的結束標籤
+        echo "<h2><a href='?y=" . ($year) . "&m=" . ($month-1) . "'>上一月</a>";
+        echo "<a href='?y=" . ($year) . "&m=" . ($month+1) . "'>下一月</a></<a>";
 
     ?>
 </body>
